@@ -19,14 +19,7 @@ public class helloWord_Yajie extends LinearOpMode {
 
         while (!isStopRequested()) {
 
-            String teamNumber = "5B";
-            double motorSpeed = 0.5;
-            boolean touchSensorPressed = true;
-
-            telemetry.addData("Run time",getRuntime());
-            telemetry.addData("Team Number", teamNumber);
-            telemetry.addData("Motor Speed", motorSpeed);
-            telemetry.addData("Touch Sensor", touchSensorPressed);
+            telemetry.addData("Hello","World");
             telemetry.update();
 
         }
