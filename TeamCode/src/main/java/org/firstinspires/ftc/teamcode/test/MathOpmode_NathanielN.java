@@ -13,7 +13,6 @@ public class MathOpmode_NathanielN {
     @Override
     public void init(){
 
-        telemetry = new MultipleTelemetry(telemetry, dashboard.getTelementry());
     }
     @Override
     public void loop(){

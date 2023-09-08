@@ -2,13 +2,17 @@ package org.firstinspires.ftc.teamcode.test;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
 @TeleOp()
 public class UseString_NathanielN {
     @Override
     public void inti(){
         String myName = "Nathaniel Nunnery";
 
-        telemetry.addData("Hello", myName);
+
+        Telemetry.addData("Hello", myName);
     }
 
     @Override
