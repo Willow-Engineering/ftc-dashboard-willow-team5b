@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.test;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 
+import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -11,6 +12,8 @@ public class MathOpmode_NathanielN {
 
     @Override
     public void init(){
+
+        telemetry = new MultipleTelemetry(telemetry, dashboard.getTelementry());
     }
     @Override
     public void loop(){
