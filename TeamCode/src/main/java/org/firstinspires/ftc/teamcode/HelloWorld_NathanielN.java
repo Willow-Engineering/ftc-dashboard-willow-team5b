@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp()
 public class HelloWorld_NathanielN extends OpMode{
-    // Use *//* to start a line of comments
+    // Use *//* to start a line o       f comments
     @Override
     public void init() {
         telemetry.addData("Hello, ", "World");

@@ -19,7 +19,7 @@ public class VariablesAndGamepads_Yajie extends LinearOpMode {
         while (!isStopRequested()) {
 
             double lSpeed = (gamepad1.left_stick_y*gamepad1.left_stick_y*gamepad1.left_stick_y);
-            double rSpeed = gamepad1.right_stick_y*gamepad1.right_stick_y*gamepad1.right_stick_y;
+            double rSpeed = (gamepad1.right_stick_y*gamepad1.right_stick_y*gamepad1.right_stick_y);
             double rT = gamepad1.right_trigger;
             double lT = gamepad1.left_trigger;
             double sT = lT+rT;
@@ -43,8 +43,8 @@ public class VariablesAndGamepads_Yajie extends LinearOpMode {
                 }
             telemetry.addData("Run time",getRuntime());
             telemetry.addData("b button", gamepad1.b);
-            telemetry.addData("dSpeed",lSpeed);
-            telemetry.addData("dSpeed",rSpeed);
+            telemetry.addData("lSpeed",lSpeed);
+            telemetry.addData("rSpped",rSpeed);
             telemetry.addData("sum of trigger",sT);
             telemetry.addData("Team Number", teamNumber);
             telemetry.update();
