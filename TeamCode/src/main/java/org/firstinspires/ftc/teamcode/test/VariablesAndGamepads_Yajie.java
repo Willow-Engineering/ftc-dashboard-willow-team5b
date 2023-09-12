@@ -18,17 +18,35 @@ public class VariablesAndGamepads_Yajie extends LinearOpMode {
 
         while (!isStopRequested()) {
 
-            double dSpeed = gamepad1.left_stick_y*gamepad1.left_stick_y*gamepad1.left_stick_y;
+            double lSpeed = (gamepad1.left_stick_y*gamepad1.left_stick_y*gamepad1.left_stick_y);
+            double rSpeed = gamepad1.right_stick_y*gamepad1.right_stick_y*gamepad1.right_stick_y;
+            double rT = gamepad1.right_trigger;
+            double lT = gamepad1.left_trigger;
+            double sT = lT+rT;
             String teamNumber = "5B";
-            double motorSpeed = 0.5;
-            boolean touchSensorPressed = true;
 
-            telemetry.addData("A button", gamepad1.a);
-            telemetry.addData("dSpeed", dSpeed);
+            if (gamepad1.a) {
+                lSpeed = lSpeed*.5;
+                rSpeed = rSpeed*.5;
+            }
+                else {
+                    lSpeed = lSpeed *1;
+                    rSpeed = rSpeed *1;
+                 }
+            if (gamepad1.b) {
+                    lSpeed = rSpeed;
+                    rSpeed = lSpeed;
+                }
+                else {
+                        lSpeed = lSpeed *1;
+                        rSpeed = rSpeed *1;
+                }
             telemetry.addData("Run time",getRuntime());
+            telemetry.addData("b button", gamepad1.b);
+            telemetry.addData("dSpeed",lSpeed);
+            telemetry.addData("dSpeed",rSpeed);
+            telemetry.addData("sum of trigger",sT);
             telemetry.addData("Team Number", teamNumber);
-            telemetry.addData("Motor Speed", motorSpeed);
-            telemetry.addData("Touch Sensor", touchSensorPressed);
             telemetry.update();
 
         }
